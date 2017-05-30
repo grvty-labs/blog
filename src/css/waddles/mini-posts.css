@@ -1,0 +1,73 @@
+.mini-post{
+  display:flex;
+  box-sizing:border-box;
+  align-items:center;
+  justify-content:center;
+  padding-bottom:3rem;
+  cursor:pointer;
+}
+
+.mini-post > .left-column {
+  display: flex;
+  box-sizing: border-box;
+  padding-right:2rem;
+}
+
+.mini-post > .left-column > img{
+  width:429px;
+  height:252px;
+}
+
+.mini-post >.right-column > .title {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 500;
+  line-height: 1.44;
+  letter-spacing: -0.2px;
+  color: #323c47;
+  height:72px;
+  width:33vw;
+  font-size: 1.56rem;
+}
+
+.mini-post >.right-column >.divider {
+  width:33vw;
+  height: 1px;
+  background-color: #d0d7dd;
+}
+
+.mini-post > .right-column > .bottom-mini-post > .time{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 0.87rem;
+  color:  #989898;
+  line-height: 1.86;
+  padding-left:0.5rem;
+  padding-top:0.2rem;
+}
+
+.mini-post > .right-column > .bottom-mini-post {
+  display:flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items:center;
+}
+
+.pagination {
+  display:flex;
+  box-sizing: border-box;
+  justify-content:center;
+}
+
+.pagination > .pagination-container {
+  display:flex;
+  box-sizing:border-box;
+  justify-content:space-between;
+  width:55vw;
+}
+
+.pagination > .pagination-container > p{
+  font-family:'Catamaran', sans-serif;
+  color: #56a2fd;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  font-size:0.93rem;
+}

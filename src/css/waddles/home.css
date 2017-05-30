@@ -1,0 +1,51 @@
+.hero{
+  width:100%;
+  height: 90vh;
+  display:flex;
+  justify-content: center;
+  box-sizing:border-box;
+}
+
+.hero > .hero-container {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-sizing:border-box;
+  padding-right:15rem;
+  padding-left:15rem;
+  box-sizing:border-box;
+}
+
+.hero > .hero-container > .button-section {
+  display:flex;
+  flex-direction:row;
+  box-sizing:border-box;
+  padding-top:1rem;
+}
+
+.hero > .hero-container > .button-section > .button {
+  height:49px;
+  width: 207px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.87rem;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  box-sizing:border-box;
+}
+
+.hero > .hero-container > .button-section > .white-button {
+  border-radius: 5px;
+  border: solid 1px #4582ca;
+  color: #8e8e8e;
+  margin-right:3rem;
+}
+
+.hero > .hero-container > .button-section > .blue-button {
+  border-radius: 5px;
+  background-color: #56a2fd;
+  color: #fff;
+}
