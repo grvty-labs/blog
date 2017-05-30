@@ -1,0 +1,39 @@
+.container-content > .container-icon{
+  display:flex;
+  box-sizing:border-box;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  flex-direction:row;
+}
+
+.container-content > .container-icon > .left-align-container{
+
+  display:flex;
+  flex-direction:row;
+  box-sizing:border-box;
+  align-items:baseline;
+  width:21vw;
+  padding-bottom:2rem;
+
+}
+
+
+.container-content > .container-icon > .left-align-container > .left-column{
+  padding-right:1rem;
+}
+
+.content-about{
+  display:flex;
+  box-sizing:border-box;
+  align-items:center;
+  justify-content:center;
+}
+
+.container-content{
+  width:55vw;
+  display:flex;
+  padding-top:5rem;
+  padding-bottom:5rem;
+  box-sizing:border-box;
+
+}
