@@ -29,19 +29,22 @@ const store = configureStore();
 class App extends Component {
   constructor(props){
     super(props);
-    this.controlPanelUpdate = this.controlPanelUpdate.bind(this);
     this.closeControlPanel = this.closeControlPanel.bind(this);
     this.openControlPanel = this.openControlPanel.bind(this);
     this._drawer = null;
-    //console.log(previousLocation);
-    store.subscribe(() => console.log('Hola'));
+    //var previousLocation = browserHistory.getCurrentLocation().pathname;
+    store.subscribe(() => this.closeControlPanel());
+
   }
 
 
   closeControlPanel() {
-    if (this._drawer) {
-      this._drawer.closeDrawer();
-    }
+    //if (this._drawer) {
+      //setTimeout(() => this._drawer.closeDrawer(),3000);
+      //if(previousLocation != browserHistory.getCurrentLocation().pathname){
+        this._drawer.closeDrawer();
+        //previousLocation = browserHistory.getCurrentLocation().pathname;
+    //}
   };
 
   openControlPanel() {
@@ -50,25 +53,8 @@ class App extends Component {
     }
   };
 
-  controlPanelUpdate(previousLocation) {
-    if(previousLocation != {location}){
-      console.log('YAY');
-      previousLocation = {location};
-    }
-    //this.closeControlPanel();
-    // if(this.currentRoot != root){
-    // }
-  }
 
   render(){
-
-    /*var closeMenu = setInterval(function () {
-      if(previousLocation == {location}){
-        console.log('YAY');
-        previousLocation = {location};
-      }
-    }, 1000);*/
-    //this.controlPanelUpdate(previousLocation);
 
 
     return (
