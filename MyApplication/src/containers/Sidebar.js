@@ -1,36 +1,28 @@
-import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  TouchableHighlight,
-} from 'react-native';
-import { Link } from 'react-router-native';
-import styles from '../styles/Sidebar.styles';
+import React from 'react';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import Sidebar from '../components/Sidebar.js';
+import { withRouter } from 'react-router-dom';
 
-class Sidebar extends Component {
-  render() {
-    const {
-      sections,
-      openControlPanel,
-      goToSection,
-    } = this.props;
-
-    let sectionsRender = sections.map((key, index) => (
-      <Link key = { index } to = { this.props[key].link } >
-        <TouchableHighlight onPress = { goToSection }>
-          <Text style = { styles.textNav }>
-            { this.props[key].title }
-          </Text>
-        </TouchableHighlight>
-      </Link>
-    ));
-
-    return(
-      <View style = { styles.navContainer }>
-        { sectionsRender }
-      </View>
-    )
-  }
+function mapStateToProps(state) {
+  return{
+    sections: ['About', 'Blog'],
+    About: {
+      title: 'About',
+      link: '/about',
+    },
+    Blog: {
+      title: 'Blog',
+      link: '/roll',
+    },
+  };
 }
 
-export default Sidebar;
+function mapDispatchToProps(dispatch){
+  return{
+    goToSection: (section) => (dispatch(push(section))),
+
+  };
+}
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Sidebar));

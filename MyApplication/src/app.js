@@ -32,13 +32,13 @@ class App extends Component {
     this.closeControlPanel = this.closeControlPanel.bind(this);
     this.openControlPanel = this.openControlPanel.bind(this);
     this._drawer = null;
-    //var previousLocation = browserHistory.getCurrentLocation().pathname;
+    
     store.subscribe(() => this.closeControlPanel());
 
   }
 
 
-  closeControlPanel() {
+  closeControlPanel(previousLocation) {
     //if (this._drawer) {
       //setTimeout(() => this._drawer.closeDrawer(),3000);
       //if(previousLocation != browserHistory.getCurrentLocation().pathname){
