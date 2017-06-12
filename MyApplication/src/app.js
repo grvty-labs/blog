@@ -17,6 +17,7 @@ import {
 } from './store';
 import styles from './styles/TopNavbar.styles';
 
+import { toggleMenu, changeLocation } from './actions/menu.actions.js';
 import Home from './containers/Home.js';
 import About from './containers/About.js';
 import Roll from './containers/roll/Roll.js';
@@ -29,34 +30,21 @@ const store = configureStore();
 class App extends Component {
   constructor(props){
     super(props);
-    this.closeControlPanel = this.closeControlPanel.bind(this);
-    this.openControlPanel = this.openControlPanel.bind(this);
     this._drawer = null;
-    
-    store.subscribe(() => this.closeControlPanel());
-
+    store.subscribe(
+      () => {
+        const state = store.getState();
+        console.log(state);
+        if (state.app.showMenu) {
+          this._drawer.closeDrawer();
+        } else if (!state.app.showMenu) {
+          this._drawer.openDrawer();
+        }
+      }
+    );
   }
 
-
-  closeControlPanel(previousLocation) {
-    //if (this._drawer) {
-      //setTimeout(() => this._drawer.closeDrawer(),3000);
-      //if(previousLocation != browserHistory.getCurrentLocation().pathname){
-        this._drawer.closeDrawer();
-        //previousLocation = browserHistory.getCurrentLocation().pathname;
-    //}
-  };
-
-  openControlPanel() {
-    if (this._drawer) {
-      this._drawer.openDrawer();
-    }
-  };
-
-
   render(){
-
-
     return (
       <Provider store = { store }>
         <NativeRouter history = { history }>
@@ -74,14 +62,14 @@ class App extends Component {
 
                 <View>
                   <View style = { styles.container }>
-                    <Link to = { '/'}>
+                    <TouchableHighlight onPress={ () => changeLocation('/') }>
                       <View style = { styles.leftColumn }>
                         <Text style = { styles.logoStyle }>Re</Text>
                         <Text style = { styles.logoBlueStyle }>|</Text>
                       </View>
-                    </Link>
+                    </TouchableHighlight>
                     <View style = { styles.rightColumn }>
-                      <TouchableHighlight onPress = { () => this.openControlPanel()}>
+                      <TouchableHighlight onPress = { toggleMenu }>
                         <Image style = { styles.logoImage } source = {require('./assets/menu-icon.png')}/>
                       </TouchableHighlight>
                     </View>
@@ -108,7 +96,5 @@ class App extends Component {
     )
   }
 }
-
-
 
 export default App;

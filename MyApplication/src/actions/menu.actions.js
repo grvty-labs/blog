@@ -1,10 +1,18 @@
 import {
   CHANGED_LOCATION,
-} from '../constants/actions';
+  TOGGLE_MENU,
+} from '../constants/actionTypes';
 
-export function toggleMenu(boolean){
+export function toggleMenu(){
+  return {
+    type: TOGGLE_MENU,
+    payload: null,
+  };
+}
+
+export function changeLocation(location){
   return {
     type: CHANGED_LOCATION,
-    payload: boolean,
-  };
+    payload: location,
+  }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import Sidebar from '../components/Sidebar.js';
 import { withRouter } from 'react-router-dom';
+import { changeLocation } from '../actions/menu.actions.js';
 
 function mapStateToProps(state) {
   return{
@@ -20,7 +20,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch){
   return{
-    goToSection: (section) => (dispatch(push(section))),
+    goToSection: (section) => (dispatch(changeLocation(section))),
 
   };
 }

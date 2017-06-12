@@ -5,6 +5,7 @@ import { combineReducers } from 'redux';
 // } from '../constants/reducers';
 import RollReducer from './data/roll';
 import PostReducer from './data/post';
+import AppReducer from './ui/app';
 
 const reducersJson = {
   // form: formReducer,
@@ -17,6 +18,7 @@ const reducersJson = {
 // Data Reducers
 reducersJson['roll'] = RollReducer;
 reducersJson['post'] = PostReducer;
+reducersJson['app'] = AppReducer;
 
 export const reducers = combineReducers(reducersJson);
 

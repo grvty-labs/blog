@@ -1,7 +1,13 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 import reducers from '../reducers';
+import { createEpicMiddleware } from 'redux-observable';
+import epics from '../epics';
 
-let middleware = [];
+
+const epicMiddleware = createEpicMiddleware(epics);
+let middleware = [
+  epicMiddleware,
+];
 
 if (true) {
   const createLogger = require('redux-logger').createLogger;

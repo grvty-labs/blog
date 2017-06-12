@@ -16,13 +16,11 @@ class Sidebar extends Component {
     } = this.props;
 
     let sectionsRender = sections.map((key, index) => (
-      <Link key = { index } to = { this.props[key].link } >
-        <TouchableHighlight onPress = { goToSection }>
-          <Text style = { styles.textNav }>
-            { this.props[key].title }
-          </Text>
-        </TouchableHighlight>
-      </Link>
+      <TouchableHighlight key = { index } onPress = { goToSection }>
+        <Text style = { styles.textNav }>
+          { this.props[key].title }
+        </Text>
+      </TouchableHighlight>
     ));
 
     return(
